@@ -114,9 +114,9 @@ function moveDodger(e) {
   } else if (e.which === 39) {
     e.stopPropagation();
     e.preventDefault();
-    
-    window.requestAnimationFrame(moveDodgerRight);
     moveDodgerRight();
+    window.requestAnimationFrame(moveDodgerRight);
+    
   }
 
   /**
