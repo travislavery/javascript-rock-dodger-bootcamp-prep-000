@@ -111,7 +111,7 @@ function moveDodger(e) {
     e.stopPropagation();
     moveDodgerLeft();
     window.requestAnimationFrame(moveDodgerLeft);
-  } else if (e.which === 39) {
+  } else if (e.which === RIGHT_ARROW) {
     e.preventDefault();
     e.stopPropagation();
     moveDodgerRight();
@@ -147,8 +147,9 @@ function moveDodgerLeft() {
 
 function moveDodgerRight() {
   var right = positionToInteger(DODGER.style.right)
-  DODGER.style.right = `${right+=4}px`;
+  
   if (right < 360) {
+    DODGER.style.right = `${right+=4}px`;
     window.requestAnimationFrame(moveDodgerRight);
   }
   
